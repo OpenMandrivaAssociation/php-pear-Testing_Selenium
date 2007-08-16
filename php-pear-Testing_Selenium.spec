@@ -8,7 +8,7 @@
 Summary:	%{_pearname} - PHP Client for Selenium RC
 Name:		php-pear-%{_pearname}
 Version:	0.3.1
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	Apache License
 Group:		Development/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tar.bz2
