@@ -8,7 +8,7 @@
 Summary:	%{_pearname} - PHP Client for Selenium RC
 Name:		php-pear-%{_pearname}
 Version:	0.3.1
-Release:	%mkrel 2
+Release:	%mkrel 3
 License:	Apache License
 Group:		Development/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tar.bz2
@@ -54,6 +54,8 @@ done
 
 # strip away annoying ^M
 find -type f | grep -v ".gif" | grep -v ".png" | grep -v ".jpg" | xargs dos2unix -U
+
+perl -pi -e "s|PHPUnit2|PHPUnit|g" %{_pearname}-%{version}/examples/*
 
 %install
 rm -rf %{buildroot}
