@@ -8,7 +8,7 @@
 Summary:	%{_pearname} - PHP Client for Selenium RC
 Name:		php-pear-%{_pearname}
 Version:	0.3.1
-Release:	%mkrel 3
+Release:	%mkrel 4
 License:	Apache License
 Group:		Development/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tar.bz2
@@ -18,7 +18,7 @@ Requires(preun): php-pear
 Requires:	php-pear
 BuildArch:	noarch
 BuildRequires:	dos2unix
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 Selenium Remote Control (SRC) is a test tool that allows you to write automated
