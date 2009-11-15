@@ -6,7 +6,7 @@
 
 Name:		php-pear-%{upstream_name}
 Version:	0.3.1
-Release:	%mkrel 6
+Release:	%mkrel 7
 Summary:	PHP Client for Selenium RC
 License:	Apache License
 Group:		Development/PHP
@@ -37,28 +37,45 @@ automatically control any supported browser.
 To use this module, you need to have already downloaded and started the
 Selenium RC Server.  (The Selenium Server is a Java application.)
 
-
 %prep
-
 %setup -q -c
-
-
-
-# strip away annoying ^M
-find -type f | grep -v ".gif" | grep -v ".png" | grep -v ".jpg" | xargs dos2unix -U
-
-perl -pi -e "s|PHPUnit2|PHPUnit|g" %{upstream_name}-%{version}/examples/*
+mv package.xml %{upstream_name}-%{version}/%{upstream_name}.xml
 
 %install
 rm -rf %{buildroot}
 
+cd %{upstream_name}-%{version}
+pear install --nodeps --packagingroot %{buildroot} %{upstream_name}.xml
+rm -rf %{buildroot}%{_datadir}/pear/.??*
+
+rm -rf %{buildroot}%{_datadir}/pear/docs
+rm -rf %{buildroot}%{_datadir}/pear/tests
+
+install -d %{buildroot}%{_datadir}/pear/packages
+install -m 644 %{upstream_name}.xml %{buildroot}%{_datadir}/pear/packages
+
+%clean
+rm -rf %{buildroot}
+
+%post
+%if %mdkversion < 201000
+pear install --nodeps --soft --force --register-only \
+    %{_datadir}/pear/packages/%{upstream_name}.xml >/dev/null || :
+%endif
+
+%preun
+%if %mdkversion < 201000
+if [ "$1" -eq "0" ]; then
+    pear uninstall --nodeps --ignore-errors --register-only \
+        %{pear_name} >/dev/null || :
+fi
+%endif
+
 %files
 %defattr(-,root,root)
 %doc %{upstream_name}-%{version}/examples
-%doc %{upstream_name}-%{version}/tests
 %doc %{upstream_name}-%{version}/ChangeLog
 %doc %{upstream_name}-%{version}/README
 %doc %{upstream_name}-%{version}/TODO
-%{_datadir}/pear/%{_class}/*.php
-%{_datadir}/pear/%{_class}/%{_subclass}/*.php
+%{_datadir}/pear/%{_class}
 %{_datadir}/pear/packages/%{upstream_name}.xml
