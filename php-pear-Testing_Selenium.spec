@@ -79,3 +79,59 @@ fi
 %doc %{upstream_name}-%{version}/TODO
 %{_datadir}/pear/%{_class}
 %{_datadir}/pear/packages/%{upstream_name}.xml
+
+
+%changelog
+* Fri Dec 16 2011 Oden Eriksson <oeriksson@mandriva.com> 0.3.1-10mdv2012.0
++ Revision: 742285
+- fix major breakage by careless packager
+
+* Fri May 27 2011 Oden Eriksson <oeriksson@mandriva.com> 0.3.1-9
++ Revision: 679589
+- mass rebuild
+
+* Tue Dec 07 2010 Oden Eriksson <oeriksson@mandriva.com> 0.3.1-8mdv2011.0
++ Revision: 613781
+- the mass rebuild of 2010.1 packages
+
+* Sun Nov 15 2009 Guillaume Rousse <guillomovitch@mandriva.org> 0.3.1-7mdv2010.1
++ Revision: 466335
+- spec cleanup
+- use pear installer
+- don't ship tests, even in documentation
+- own all directories
+- use rpm filetriggers starting from mandriva 2010.1
+
+* Fri Sep 04 2009 Thierry Vignaud <tv@mandriva.org> 0.3.1-6mdv2010.0
++ Revision: 430698
+- rebuild
+
+  + Oden Eriksson <oeriksson@mandriva.com>
+    - rebuild
+
+* Thu Jul 17 2008 Oden Eriksson <oeriksson@mandriva.com> 0.3.1-4mdv2009.0
++ Revision: 237102
+- rebuild
+
+  + Olivier Blin <blino@mandriva.org>
+    - restore BuildRoot
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+
+* Fri Nov 09 2007 Oden Eriksson <oeriksson@mandriva.com> 0.3.1-3mdv2008.1
++ Revision: 107007
+- PHPUnit2/PHPUnit
+
+* Thu Aug 16 2007 Thierry Vignaud <tv@mandriva.org> 0.3.1-2mdv2008.0
++ Revision: 64198
+- rebuild
+
+* Wed Apr 18 2007 Oden Eriksson <oeriksson@mandriva.com> 0.3.1-1mdv2008.0
++ Revision: 14682
+- Import php-pear-Testing_Selenium
+
+
+
+* Sat Nov 11 2006 Oden Eriksson <oeriksson@mandriva.com> 0.3.1-1mdv2008.0
+- initial Mandriva package
