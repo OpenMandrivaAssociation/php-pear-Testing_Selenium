@@ -3,13 +3,13 @@
 %define		upstream_name	%{_class}_%{_subclass}
 
 Name:		php-pear-%{upstream_name}
-Version:	0.3.1
-Release:	11
+Version:	0.4.4
+Release:	1
 Summary:	PHP Client for Selenium RC
 License:	Apache License
 Group:		Development/PHP
 URL:		http://pear.php.net/package/XML_Util/
-Source0:	http://download.pear.php.net/package/%{upstream_name}-%{version}.tar.bz2
+Source0:	http://download.pear.php.net/package/Testing_Selenium-%{version}.tgz
 Requires(post): php-pear
 Requires(preun): php-pear
 Requires:	php-pear
@@ -118,3 +118,4 @@ install -m 644 %{upstream_name}.xml %{buildroot}%{_datadir}/pear/packages
 
 * Sat Nov 11 2006 Oden Eriksson <oeriksson@mandriva.com> 0.3.1-1mdv2008.0
 - initial Mandriva package
+
