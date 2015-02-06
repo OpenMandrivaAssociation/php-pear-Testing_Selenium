@@ -4,7 +4,7 @@
 
 Name:		php-pear-%{upstream_name}
 Version:	0.4.4
-Release:	1
+Release:	2
 Summary:	PHP Client for Selenium RC
 License:	Apache License
 Group:		Development/PHP
