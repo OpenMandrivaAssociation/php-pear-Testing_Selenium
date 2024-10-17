@@ -8,7 +8,7 @@ Release:	2
 Summary:	PHP Client for Selenium RC
 License:	Apache License
 Group:		Development/PHP
-URL:		http://pear.php.net/package/XML_Util/
+URL:		https://pear.php.net/package/XML_Util/
 Source0:	http://download.pear.php.net/package/Testing_Selenium-%{version}.tgz
 Requires(post): php-pear
 Requires(preun): php-pear
